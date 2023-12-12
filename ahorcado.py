@@ -7,7 +7,7 @@ def jugar_ahorcado():
 
     while intentos_fallidos_maximos > 0:
         palabra_mostrada = ''.join(letra if letra in letras_adivinadas else '_' for letra in palabra_secreta)
-        print("Palabra a adivinar: " + palabra_mostrada)
+        print(f"Palabra a adivinar: {palabra_mostrada}")
 
         if palabra_mostrada == palabra_secreta:
             print("¡Felicidades! Has adivinado la palabra.")
@@ -17,12 +17,12 @@ def jugar_ahorcado():
 
         if letra not in palabra_secreta:
             intentos_fallidos_maximos -= 1
-            print("Incorrecto. Intentos fallidos restantes:", intentos_fallidos_maximos)
+            print(f"Incorrecto. Intentos fallidos restantes: {intentos_fallidos_maximos}" )
         
         letras_adivinadas.append(letra)
 
     if intentos_fallidos_maximos == 0:
-        print("¡Oh no! Has agotado tus intentos fallidos. La palabra era:", palabra_secreta)
+        print(f"¡Oh no! Has agotado tus intentos fallidos. La palabra era: {palabra_secreta}")
 
 if __name__ == "__main__":
     jugar_ahorcado()
